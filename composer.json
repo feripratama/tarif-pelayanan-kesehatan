@@ -32,7 +32,7 @@
                 "Bantenprov\\TarifPelayananKesehatan\\TarifPelayananKesehatanServiceProvider"
             ],
             "aliases": {
-                "Menu": "Bantenprov\\TarifPelayananKesehatan\\Facades\\TarifPelayananKesehatan"
+                "TarifPelayananKesehatan": "Bantenprov\\TarifPelayananKesehatan\\Facades\\TarifPelayananKesehatan"
             }
         }
     }
