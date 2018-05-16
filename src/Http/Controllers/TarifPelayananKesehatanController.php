@@ -2,8 +2,14 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+/* Model */
 use Bantenprov\TarifPelayananKesehatan\Facades\TarifPelayananKesehatan;
 use Bantenprov\TarifPelayananKesehatan\Models\TarifPelayananKesehatanModel;
+use Bantenprov\MasterTarif\Models\MasterTarifModel;
+
+/* ETC */
+use Ramsey\Uuid\Uuid;
 
 /**
  * The TarifPelayananKesehatanController class.
@@ -13,8 +19,5 @@ use Bantenprov\TarifPelayananKesehatan\Models\TarifPelayananKesehatanModel;
  */
 class TarifPelayananKesehatanController extends Controller
 {
-    public function demo()
-    {
-        return TarifPelayananKesehatan::welcome();
-    }
+    //
 }

@@ -1,1 +1,0 @@
-This is demo view file for Bantenprov\TarifPelayananKesehatan package using blade template

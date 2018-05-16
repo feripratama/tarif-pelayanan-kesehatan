@@ -1,33 +1,37 @@
-<?php namespace Bantenprov\TarifPelayananKesehatan\Models;
+<?php
+
+namespace Bantenprov\TarifPelayananKesehatan\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * The TarifPelayananKesehatanModel class.
- *
- * @package Bantenprov\TarifPelayananKesehatan
- * @author  bantenprov <developer.bantenprov@gmail.com>
- */
-class TarifPelayananKesehatanModel extends Model
+class TarifPelayananKesehatan extends Model 
 {
-    /**
-    * Table name.
-    *
-    * @var string
-    */
-    protected $table = 'tarif_pelayanan_kesehatan';
 
-    /**
-    * The attributes that are mass assignable.
-    *
-    * @var mixed
-    */
-    protected $fillable = [];
+    protected $table = 'tarifs';
+    public $timestamps = true;
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [];
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+    protected $fillable = [
+        'uuid',
+        'uraian',
+        'tarif',
+        'jasa_pelayanan',
+        'jasa_sarana',
+        'satuan',
+        'master_tarif_id',
+    ];
+
+    public function getMasterTarif()
+    {
+        return $this->hasOne('Bantenprov\MasterTarif\Models\MasterTarifModel', 'master_tarif_id');
+    }
+
+    public function getItem()
+    {
+        return $this->hasMany('Item', 'id');
+    }
+
 }

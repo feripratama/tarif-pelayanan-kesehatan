@@ -1,5 +1,5 @@
 <?php
 
-Route::group(['prefix' => 'tarif-pelayanan-kesehatan'], function() {
-    Route::get('demo', 'Bantenprov\TarifPelayananKesehatan\Http\Controllers\TarifPelayananKesehatanController@demo');
+Route::group(['prefix' => '/'], function() {
+    Route::resource('tarif-pelayanan-kesehatan', 'Bantenprov\TarifPelayananKesehatan\Http\Controllers\TarifPelayananKesehatanController');
 });
